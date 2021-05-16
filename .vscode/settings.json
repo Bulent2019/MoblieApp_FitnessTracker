@@ -1,0 +1,19 @@
+{
+    "editor.fontSize": 12,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.mouseWheelZoom": true,
+    "editor.wordBasedSuggestions": false,
+    "workbench.startupEditor": "none",
+    "workbench.preferredDarkColorTheme": "Default High Contrast",
+    "colorize.colorized_colors": [
+
+        "BROWSERS_COLORS",
+        "HEXA",
+        "RGB",
+        "HSL"
+    ],
+    "colorize.languages": [
+        "javascript",
+        // ...
+    ]
+}
