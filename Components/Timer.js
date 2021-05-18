@@ -11,12 +11,13 @@ export default function TrainingStart() {
   let id = 0;
   let n = 0;
 
+  
   useEffect(() => {
     if (running) {
-        if(msec < 9) {
+        if(msec < 99) {
           id = setInterval(() => {
             setMsec(msec => msec + 1)
-          }, 100);
+          }, 10);
           return () => clearInterval(id);
         }  else {
           setMsec(0);
@@ -50,7 +51,7 @@ export default function TrainingStart() {
     <View style={styles.container}>
 
       <View style={styles.counter}>
-        <Text style={styles.timer}>{min < 10 ? `${n}${min}` : `${min}`}:{sec < 10 ? `${n}${sec}` : `${sec}`},{msec}</Text>
+        <Text style={styles.timer}>{min < 10 ? `${n}${min}` : `${min}`}:{sec < 10 ? `${n}${sec}` : `${sec}`},{msec < 10 ? `${n}${msec}` : `${msec}`}</Text>
       </View>
 
       <Button 
@@ -62,8 +63,10 @@ export default function TrainingStart() {
       />
 
       <View style={styles.buttons}>
-        {!running
-          ? ( <Ionicons 
+        {
+          !running ? 
+            ( 
+              <Ionicons 
                 name="play-circle-outline"
                 color="green"
                 size={110}
@@ -71,7 +74,9 @@ export default function TrainingStart() {
               >
               </Ionicons>
             )
-          : ( <Ionicons
+          : 
+            ( 
+              <Ionicons
                 name='stop-circle-outline'
                 color="red"
                 size={110}

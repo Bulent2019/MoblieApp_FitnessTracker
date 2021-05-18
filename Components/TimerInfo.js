@@ -54,25 +54,27 @@ export default function TimerInfo() {
             <Text style={styles.timer}>{hour < 10 ? `${n}${hour}` : `${hour}`}:{min < 10 ? `${n}${min}` : `${min}`}:{sec < 10 ? `${n}${sec}` : `${sec}`}</Text>
         </View>
 
-        {!running ? 
+        {
+          !running ? 
             ( 
-                <Ionicons 
-                name="play-circle-outline"
-                color="green"
-                size={70}
-                onPress={() => setRunning(true)}       
-                />
+              <Ionicons 
+              name="play-circle-outline"
+              color="green"
+              size={70}
+              onPress={() => setRunning(true)}       
+              />
             )
-            : 
+          : 
             ( 
-                <Ionicons
-                name='stop-circle-outline'
-                color="red"
-                size={70}
-                onPress={() => setRunning(false)}     
-                />
+              <Ionicons
+              name='stop-circle-outline'
+              color="red"
+              size={70}
+              onPress={() => setRunning(false)}     
+              />
             )
         }
+
         <Button 
           title='Reset' 
           color='#fff'

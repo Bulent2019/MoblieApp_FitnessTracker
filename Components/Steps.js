@@ -1,26 +1,5 @@
 import React, { useState } from "react";
-import { FlatList, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-
-// const DATA = [
-//   {
-//     id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-//     title: "First Item",
-//   },
-//   {
-//     id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-//     title: "Second Item",
-//   },
-//   {
-//     id: "58694a0f-3da1-471f-bd96-145571e29d72",
-//     title: "Third Item",
-//   },
-// ];
-
-// const Item = ({ item, onPress, backgroundColor, textColor }) => (
-//   <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-//     <Text style={[styles.title, textColor]}>{item.title}</Text>
-//   </TouchableOpacity>
-// );
+import {  StatusBar, StyleSheet, Text, View } from "react-native";
 
 export default function Steps(props) {
   const [distance, setDistance] = useState(0);
@@ -30,7 +9,8 @@ export default function Steps(props) {
   return (
     <View style={styles.container}>
       <Text style={{fontSize: 32}}>Steps: </Text>
-        <Text style={{fontSize: 46, color: 'green', marginTop: 30}}>{distance * perOneKm}</Text>
+      <Text style={{fontSize: 14}}>Average steps per km ~1300.</Text>
+      <Text style={{fontSize: 46, color: 'green', marginTop: 30}}>{distance * perOneKm}</Text>
     </View>
   );
 };
@@ -41,14 +21,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    // marginTop: StatusBar.currentHeight || 0,
+    marginTop: StatusBar.currentHeight || 0,
   },
-  // item: {
-  //   padding: 5,
-  //   marginVertical: 2,
-  //   marginHorizontal: 20,
-  // },
-  // title: {
-  //   fontSize: 20,
-  // },
+  item: {
+    padding: 5,
+    marginVertical: 2,
+    marginHorizontal: 20,
+  },
+  title: {
+    fontSize: 20,
+  },
 });
